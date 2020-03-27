@@ -1,6 +1,6 @@
 <template>
     <ul class="asideCom_box">
-        <li v-for="ele in items" :key="ele.index">
+        <li v-for="ele in getItem" :key="ele.index">
             {{ ele.title }}
         </li>
     </ul>
@@ -9,6 +9,12 @@
 <script>
 export default {
     name: "asideCom",
+    props: {
+        isM: {
+            type: Boolean,
+            default: false
+        }
+    },
     data() {
         return {
             items: [
@@ -107,6 +113,16 @@ export default {
                   title: "支持作者"
                 }
             ]
+        }
+    },
+    computed: {
+        getItem() {
+            if (this.isM && this.items.length > 5) {
+                // eslint-disable-next-line vue/no-side-effects-in-computed-properties
+                return (this.items.length = 5) && this.items;
+            } else {
+                return this.items;
+            }
         }
     },
 }

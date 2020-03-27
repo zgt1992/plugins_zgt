@@ -1,29 +1,26 @@
 # plugins_zgt
 
-## Project setup
-```
-npm install
-```
+## 包含插件
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+    layoutCom
 
-### Compiles and minifies for production
-```
-npm run build
-```
+### vue中使用
 
-### Run your tests
-```
-npm run test
-```
+1.下载包
 
-### Lints and fixes files
-```
-npm run lint
-```
+    执行命令：`npm i plugins_zgt`
+    
+2.在main.js中引入
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+    import plugins_zgt from 'plugins_zgt'
+    import 'plugins_zgt/lib/layoutCom_zgt.css'
+
+    Vue.use(plugins_zgt);
+
+3.组件中使用
+
+    <template>
+        <div id="app">
+            <layoutCom />
+        </div>
+    </template>

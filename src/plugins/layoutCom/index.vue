@@ -33,15 +33,20 @@ export default {
     data() {
         return {
             isPC: vaildatePc()
-        }
+        };
     },
     created() {
-        console.log(this.isPC)
+        this.$layoutCom.publish("isPc", this.isPC);
     },
 }
 </script>
 
 <style scoped>
+>>> ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
 .layout_all {
     height: 100%;
     width: 100%;

@@ -12,7 +12,7 @@
             </section>
         </div>
         <!-- <footerCom class="layout_footer"></footerCom> -->
-        <asideCom class="layout_aside"></asideCom>
+        <asideCom :isM="true" class="layout_aside"></asideCom>
     </div>
 </template>
 
