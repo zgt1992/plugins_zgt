@@ -29,8 +29,9 @@
 
     使用 this.$layoutCom.listen(key, function); 监听layoutCom向外暴露的属性，key是要监听的属性的唯一标识，function是回调。
 
-    |Keys(string)  | Explain                    |
-    |"isPC"        | 是否PC端布局，返回值Boolean   |
+| Keys(string)        | Explain                     |
+| :--------:          | :-----                      |
+| "isPC"              | 是否PC端布局，返回值Boolean   |
 
     <script>
         export default {
