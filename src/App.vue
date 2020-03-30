@@ -11,7 +11,6 @@ export default {
         }
     },
     created() {
-        console.log(222)
         this.$layoutCom.listen("isPc", (a) => {
             console.log(a);
         });

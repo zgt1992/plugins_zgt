@@ -29,7 +29,7 @@ const install = (Vue)=>{
         get:(target, key, receiver) => {
             return Reflect.get(target, key, receiver);
         },
-        set:(target, key, newValue, receiver) => {
+        set:() => {
             throw new Error(" You cannot modify the properties of this object! ");
         }
     });

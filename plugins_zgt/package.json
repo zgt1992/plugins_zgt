@@ -1,0 +1,29 @@
+{
+  "name": "plugins_zgt",
+  "version": "0.1.2",
+  "description": "",
+  "main": "lib/plugins_zgt.umd.min.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zgt1992/plugins_zgt.git"
+  },
+  "keywords": [
+    "vue",
+    "plugins",
+    "zgt",
+    "plugins_zgt",
+    "components"
+  ],
+  "author": "1505608102@qq.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zgt1992/plugins_zgt/issues"
+  },
+  "homepage": "https://github.com/zgt1992/plugins_zgt#readme"
+}

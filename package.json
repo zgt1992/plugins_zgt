@@ -1,6 +1,6 @@
 {
   "name": "plugins_zgt",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "description": "plugins_zgt",
   "main":"lib/layoutCom_zgt.umd.min.js",
@@ -8,7 +8,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "lib": "vue-cli-service build --target lib --name layoutCom_zgt --dest lib src/plugins/index.js"
+    "lib": "vue-cli-service build --target lib --name plugins_zgt --dest plugins_zgt/lib src/plugins/index.js"
   },
   "dependencies": {
     "core-js": "^2.6.5",
