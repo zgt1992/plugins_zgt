@@ -21,7 +21,7 @@ function vaildatePc() {
     return flag;
 }
 export default {
-    name: 'layoutCom',
+    name: 'LayoutCom_zgt',
     components: {
         // headerCom,
         // tagsCom,
@@ -36,7 +36,7 @@ export default {
         };
     },
     created() {
-        this.$layoutCom.publish("isPc", this.isPC);
+        this.$layoutCom_zgt.publish("isPc", this.isPC);
     },
 }
 </script>

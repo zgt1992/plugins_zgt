@@ -2,7 +2,7 @@
 
 ## 包含插件
 
-    layoutCom
+    LayoutCom_zgt
 
 ### vue中使用
 
@@ -21,13 +21,13 @@
 
     <template>
         <div id="app">
-            <layoutCom />
+            <LayoutCom_zgt />
         </div>
     </template>
 
-4.js中监听layoutCom的属性
+4.js中监听LayoutCom_zgt的属性
 
-    使用 this.$layoutCom.listen(key, function); 监听layoutCom向外暴露的属性，key是要监听的属性的唯一标识，function是回调。
+    使用 this.$LayoutCom_zgt.listen(key, function); 监听LayoutCom_zgt向外暴露的属性，key是要监听的属性的唯一标识，function是回调。
 
 | Keys(string)        | Explain                     |
 | :--------:          | :-----                      |
@@ -41,7 +41,7 @@
                 };
             },
             created() {
-                this.$layoutCom.listen("isPc", (data) => {
+                this.$LayoutCom_zgt.listen("isPc", (data) => {
                     console.log(data);
                     this.isPC = data;
                 });

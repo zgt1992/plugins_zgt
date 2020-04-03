@@ -1,9 +1,16 @@
-const requireComponent = require.context('./', true, /\.vue$/);
+const requireComponent = require.context('/', true, /init.js$/);
+
+// let plugins_zgt = {};
+let components = [];
+requireComponent.keys().forEach(fileName => {
+    const config = requireComponent(fileName);
+    // const componentName = config.default.name;
+    // plugins_zgt[componentName] = config.default || config;
+    components.push(config.default || config);
+});
 
 const install = (Vue)=>{
-    if(install.installed) return
-    install.installed
-    Vue.prototype.$layoutCom = new Proxy({
+    Vue.prototype.$layoutCom_zgt = new Proxy({
         list: {},
         offlineInfo: {},
         listen: function (key, userFun) {
@@ -33,21 +40,27 @@ const install = (Vue)=>{
             throw new Error(" You cannot modify the properties of this object! ");
         }
     });
-    Object.defineProperty(Vue, "$layoutCom", {
+    Object.defineProperty(Vue, "$layoutCom_zgt", {
         writable: false
     });
-    requireComponent.keys().forEach(fileName => {
-        const config = requireComponent(fileName);
-        const componentName = config.default.name;
-        Vue.component(componentName, config.default || config);
+    components.forEach(ele => {
+        // const config = requireComponent(fileName);
+        // const componentName = config.default.name;
+        Vue.component(ele.name, ele);
     });
 }
+
 // 确保是正常环境 浏览器环境 node是没有window的
 if(typeof window !== 'undefined' && window.Vue){
     // 注册vue
     install(window.Vue);
 }
-export default{
+// import layoutCom from './layoutCom/src/layoutCom'
+
+export default {
     install
-    // 导出的对象必须具备一个install方法
 }
+
+// export {
+//     layoutCom
+// }

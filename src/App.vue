@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <layoutCom />
+        <LayoutCom_zgt></LayoutCom_zgt>
     </div>
 </template>
 
@@ -11,9 +11,9 @@ export default {
         }
     },
     created() {
-        this.$layoutCom.listen("isPc", (a) => {
-            console.log(a);
-        });
+        // this.$layoutCom_zgt.listen("isPc", (a) => {
+        //     // console.log(a);
+        // });
     }
 }
 </script>
