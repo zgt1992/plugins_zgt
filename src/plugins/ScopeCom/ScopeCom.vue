@@ -307,7 +307,7 @@ export default {
                     // this.changeBorder(res);
                 })
                 .catch(err => {
-                    console.log(err);
+                    // console.log(err);
                     if (err.data) {
                         switch (err.path) {
                         case "{5}情况值非数字":

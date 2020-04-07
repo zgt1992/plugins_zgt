@@ -1,5 +1,6 @@
 <template>
     <div class="home">
+        <button_zgt />
         <DownloadFile />
         <ScopeCom v-model="scopeVal" :scopeContainInt="true" />
         <img alt="Vue logo" src="../assets/logo.png">
