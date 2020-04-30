@@ -1,48 +1,15 @@
 const requireComponent = require.context('/', true, /init.js$/);
 
-// let plugins_zgt = {};
+let plugins_zgt = {};
 let components = [];
 requireComponent.keys().forEach(fileName => {
     const config = requireComponent(fileName);
-    // const componentName = config.default.name;
-    // plugins_zgt[componentName] = config.default || config;
+    const componentName = config.default.name;
+    plugins_zgt[componentName] = config.default || config;
     components.push(config.default || config);
 });
 
 const install = (Vue)=>{
-    Vue.prototype.$layoutCom_zgt = new Proxy({
-        list: {},
-        offlineInfo: {},
-        listen: function (key, userFun) {
-            if (typeof(key) === 'string' && typeof(userFun) === 'function') {
-                this.list[key] = userFun;
-                if (this.offlineInfo.hasOwnProperty(key)) {
-                    this.publish(key, this.offlineInfo[key]);
-                    delete this.offlineInfo[key];
-                }
-            } else {
-                throw new Error(" The first parameter is the string and the second parameter is the function of the 'listen' function! ");
-            }
-        },
-        publish: function (key, act) {
-            if (this.list[key]) {
-                this.list[key](act);
-            } else {
-                this.offlineInfo[key] = act;
-                console.warn(` You can ignore this prompt if you do not use this property. You should monitor '${key}' before publishing! `);
-            }
-        }
-    }, {
-        get:(target, key, receiver) => {
-            return Reflect.get(target, key, receiver);
-        },
-        set:() => {
-            throw new Error(" You cannot modify the properties of this object! ");
-        }
-    });
-    Object.defineProperty(Vue, "$layoutCom_zgt", {
-        writable: false
-    });
     components.forEach(ele => {
         // const config = requireComponent(fileName);
         // const componentName = config.default.name;
@@ -55,12 +22,14 @@ if(typeof window !== 'undefined' && window.Vue){
     // 注册vue
     install(window.Vue);
 }
-// import layoutCom from './layoutCom/src/layoutCom'
-
+// import layoutCom from './layoutCom/init.js'
+// console.log(layoutCom)
 export default {
     install
 }
-
-// export {
-//     layoutCom
-// }
+ console.log(plugins_zgt)
+export let {
+    LayoutCom_zgt,
+    button_zgt,
+    DownloadFile
+} = plugins_zgt;
